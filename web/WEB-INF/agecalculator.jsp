@@ -13,6 +13,9 @@
     </head>
     <body>
         <h1>Age Calculator</h1>
-        Enter your age:
+        <form method="post" action="age">
+            Enter your age: <input type="number"> <br>
+            
+        </form>
     </body>
 </html>
