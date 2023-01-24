@@ -27,17 +27,14 @@ public class AgeCalculatorServlet extends HttpServlet {
    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String age = request.getParameter("bage");
-        if(age == null || age.equals("") ){
-            request.setAttribute("message", "You must give your current age");
-        }
-        
+            throws ServletException, IOException { 
        try{
           int newAge = Integer.parseInt(request.getParameter("bage"));
           newAge++;
           request.setAttribute("message", "Your age next birthday will be " + newAge++); 
        }catch(Exception e){
+           String age = request.getParameter("bage");
+           if( age == null ||age.equals(""))
            request.setAttribute("message","You must give your current age");
            
        }
