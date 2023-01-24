@@ -33,8 +33,6 @@ public class AgeCalculatorServlet extends HttpServlet {
           newAge++;
           request.setAttribute("message", "Your age next birthday will be " + newAge++); 
        }catch(Exception e){
-           String age = request.getParameter("bage");
-           if( age == null ||age.equals(""))
            request.setAttribute("message","You must give your current age");
            
        }
