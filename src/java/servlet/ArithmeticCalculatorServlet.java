@@ -31,6 +31,23 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        try{
+            int firstNum = Integer.parseInt(request.getParameter("firstnum"));
+            int secondNum = Integer.parseInt(request.getParameter("secondnum"));
+             switch(request.getParameter("math")){
+                 case "+":request.setAttribute("message", firstNum + secondNum);
+                         break;
+                 case"-":request.setAttribute("message", firstNum - secondNum);
+                        break;
+                 case"*":request.setAttribute("message", firstNum * secondNum);
+                        break;
+                 case"%":request.setAttribute("message", firstNum % secondNum);
+                        break;
+             }
+            
+        }catch(Exception e){
+            
+        }
        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp").forward(request, response);
     }
 
